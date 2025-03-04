@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Must be handled on configuration files with related app target
 struct AppConfig {
     static let baseURL = "https://jsonplaceholder.typicode.com"
 }

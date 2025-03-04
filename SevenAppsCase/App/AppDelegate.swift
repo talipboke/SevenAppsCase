@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func startApp() {
-        let controller = HomeViewController()
-        let navigationController = UINavigationController(rootViewController: controller)
+        let navigationController = UINavigationController(rootViewController: UserListBuilder.build())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
