@@ -55,14 +55,12 @@ private extension UserCell {
     
     func makeNameLabel() -> UILabel {
         let label = UILabel()
-        label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .semibold)
         return label
     }
     
     func makeEmailLabel() -> UILabel {
         let label = UILabel()
-        label.textAlignment = .left
         return label
     }
 }

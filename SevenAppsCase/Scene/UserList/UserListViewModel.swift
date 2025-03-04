@@ -10,6 +10,7 @@ import Foundation
 protocol UserListViewModelProtocol: AnyObject {
     var userList: ConsecutiveNonRepeatingState<[UserModel]> { get }
     func onViewDidLoad()
+    func onTapCell(by index: Int)
 }
 
 final class UserListViewModel: UserListViewModelProtocol {
@@ -29,6 +30,10 @@ final class UserListViewModel: UserListViewModelProtocol {
         Task {
             await getUserList()
         }
+    }
+    
+    func onTapCell(by index: Int) {
+        coordinator.navigateToUserDetail(with: userList.value[index])
     }
 }
 
