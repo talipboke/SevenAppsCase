@@ -11,6 +11,7 @@
 		CB5F4B2B2D76E77700C2ADD8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F4B2A2D76E77700C2ADD8 /* HomeViewController.swift */; };
 		CB5F4B302D76E77A00C2ADD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB5F4B2F2D76E77A00C2ADD8 /* Assets.xcassets */; };
 		CB5F4B332D76E77A00C2ADD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5F4B312D76E77A00C2ADD8 /* LaunchScreen.storyboard */; };
+		CBBA35F42D76F1C10095672A /* EasyNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = CBBA35F32D76F1C10095672A /* EasyNetwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		CB5F4B2F2D76E77A00C2ADD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB5F4B322D76E77A00C2ADD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB5F4B342D76E77A00C2ADD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB5F4B432D76F19F00C2ADD8 /* EasyNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = EasyNetwork; path = Packages/EasyNetwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBBA35F42D76F1C10095672A /* EasyNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,8 +39,10 @@
 		CB5F4B1A2D76E77700C2ADD8 = {
 			isa = PBXGroup;
 			children = (
+				CB5F4B422D76F19F00C2ADD8 /* Packages */,
 				CB5F4B252D76E77700C2ADD8 /* SevenAppsCase */,
 				CB5F4B242D76E77700C2ADD8 /* Products */,
+				CBBA35F22D76F1C10095672A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +90,21 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		CB5F4B422D76F19F00C2ADD8 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				CB5F4B432D76F19F00C2ADD8 /* EasyNetwork */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		CBBA35F22D76F1C10095672A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,6 +121,9 @@
 			dependencies = (
 			);
 			name = SevenAppsCase;
+			packageProductDependencies = (
+				CBBA35F32D76F1C10095672A /* EasyNetwork */,
+			);
 			productName = SevenAppsCase;
 			productReference = CB5F4B232D76E77700C2ADD8 /* SevenAppsCase.app */;
 			productType = "com.apple.product-type.application";
@@ -364,6 +387,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBBA35F32D76F1C10095672A /* EasyNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EasyNetwork;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB5F4B1B2D76E77700C2ADD8 /* Project object */;
 }
