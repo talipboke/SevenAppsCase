@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol UserListViewModelProtocol {
+protocol UserListViewModelProtocol: AnyObject {
     var userList: ConsecutiveNonRepeatingState<[UserModel]> { get }
     func onViewDidLoad()
 }
@@ -16,9 +16,13 @@ final class UserListViewModel: UserListViewModelProtocol {
     var userList = ConsecutiveNonRepeatingState<[UserModel]>(initialValue: [])
     
     private let userApi: UserAPIProtocol
+    private let coordinator: UserListCoordinator
     
-    init(userApi: UserAPIProtocol = UserAPI()) {
+    init(userApi: UserAPIProtocol,
+         coordinator: UserListCoordinator) {
         self.userApi = userApi
+        self.coordinator = coordinator
+        coordinator.viewModel = self
     }
     
     func onViewDidLoad() {
@@ -34,6 +38,7 @@ private extension UserListViewModel {
             let list = try await userApi.getUserList()
             userList.update(list)
         } catch {
+            // TODO: Will be handled
             print(error)
         }
     }

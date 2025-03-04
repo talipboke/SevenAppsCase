@@ -15,7 +15,7 @@ protocol UserAPIProtocol {
 struct UserAPI: UserAPIProtocol {
     private let network: NetworkProtocol
     
-    init(network: NetworkProtocol = NetworkManager()) {
+    init(network: NetworkProtocol) {
         self.network = network
     }
     

@@ -10,9 +10,10 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
+    private var coordinator: AppCoordinator?
+    private lazy var dependencies = AppDependencies()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
         startApp()
         return true
     }
@@ -20,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func startApp() {
-        let navigationController = UINavigationController(rootViewController: UserListBuilder.build())
+        let navigationController = UINavigationController()
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        coordinator = dependencies.makeAppCoordinator(navigationController)
+        coordinator?.start()
     }
 }

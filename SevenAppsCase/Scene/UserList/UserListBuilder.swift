@@ -7,9 +7,14 @@
 
 import UIKit
 
-enum UserListBuilder {
-    static func build() -> UIViewController {
-        let viewModel = UserListViewModel()
+
+protocol UserListBuilder {
+    func build(coordinator: UserListCoordinator) -> UserListViewController
+}
+
+extension AppDependencies: UserListBuilder {
+    func build(coordinator: UserListCoordinator) -> UserListViewController {
+        let viewModel = UserListViewModel(userApi: makeUserAPI(), coordinator: coordinator)
         return UserListViewController(viewModel: viewModel)
     }
 }
