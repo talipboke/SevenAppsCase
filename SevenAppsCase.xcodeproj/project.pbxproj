@@ -28,8 +28,23 @@
 		CB5FD1002D774CE000121BEA /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD0FF2D774CE000121BEA /* CoordinatorProtocol.swift */; };
 		CB5FD1022D774CF800121BEA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD1012D774CF800121BEA /* AppCoordinator.swift */; };
 		CB5FD1042D77517200121BEA /* UserListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD1032D77517200121BEA /* UserListCoordinator.swift */; };
+		CB5FD1072D779C4500121BEA /* UserDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD1062D779C4500121BEA /* UserDetailBuilder.swift */; };
+		CB5FD1092D779C4B00121BEA /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD1082D779C4B00121BEA /* UserDetailViewModel.swift */; };
+		CB5FD10B2D779C5600121BEA /* UserDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD10A2D779C5600121BEA /* UserDetailController.swift */; };
+		CB5FD10D2D77A66400121BEA /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD10C2D77A66300121BEA /* UserDetailView.swift */; };
+		CB5FD11D2D77A9F300121BEA /* UserDetailControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD11C2D77A9F300121BEA /* UserDetailControllerTests.swift */; };
 		CBBA35F42D76F1C10095672A /* EasyNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = CBBA35F32D76F1C10095672A /* EasyNetwork */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB5FD1162D77A8F500121BEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB5F4B1B2D76E77700C2ADD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB5F4B222D76E77700C2ADD8;
+			remoteInfo = SevenAppsCase;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CB5F4B232D76E77700C2ADD8 /* SevenAppsCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SevenAppsCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +71,12 @@
 		CB5FD0FF2D774CE000121BEA /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		CB5FD1012D774CF800121BEA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CB5FD1032D77517200121BEA /* UserListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCoordinator.swift; sourceTree = "<group>"; };
+		CB5FD1062D779C4500121BEA /* UserDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBuilder.swift; sourceTree = "<group>"; };
+		CB5FD1082D779C4B00121BEA /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		CB5FD10A2D779C5600121BEA /* UserDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailController.swift; sourceTree = "<group>"; };
+		CB5FD10C2D77A66300121BEA /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		CB5FD1122D77A8F500121BEA /* SevenAppsCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SevenAppsCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5FD11C2D77A9F300121BEA /* UserDetailControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +88,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB5FD10F2D77A8F500121BEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +103,7 @@
 			children = (
 				CB5F4B422D76F19F00C2ADD8 /* Packages */,
 				CB5F4B252D76E77700C2ADD8 /* SevenAppsCase */,
+				CB5FD1132D77A8F500121BEA /* SevenAppsCaseTests */,
 				CB5F4B242D76E77700C2ADD8 /* Products */,
 				CBBA35F22D76F1C10095672A /* Frameworks */,
 			);
@@ -84,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				CB5F4B232D76E77700C2ADD8 /* SevenAppsCase.app */,
+				CB5FD1122D77A8F500121BEA /* SevenAppsCaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				CB5F4B3A2D76EBFB00C2ADD8 /* UserList */,
+				CB5FD1052D779C3400121BEA /* UserDetail */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -219,6 +250,41 @@
 				CB5FD1032D77517200121BEA /* UserListCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CB5FD1052D779C3400121BEA /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CB5FD1062D779C4500121BEA /* UserDetailBuilder.swift */,
+				CB5FD1082D779C4B00121BEA /* UserDetailViewModel.swift */,
+				CB5FD10C2D77A66300121BEA /* UserDetailView.swift */,
+				CB5FD10A2D779C5600121BEA /* UserDetailController.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		CB5FD1132D77A8F500121BEA /* SevenAppsCaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB5FD11B2D77A9D900121BEA /* Scene */,
+			);
+			path = SevenAppsCaseTests;
+			sourceTree = "<group>";
+		};
+		CB5FD11B2D77A9D900121BEA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CB5FD11E2D77A9F600121BEA /* Detail */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		CB5FD11E2D77A9F600121BEA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CB5FD11C2D77A9F300121BEA /* UserDetailControllerTests.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		CBBA35F22D76F1C10095672A /* Frameworks */ = {
@@ -251,6 +317,24 @@
 			productReference = CB5F4B232D76E77700C2ADD8 /* SevenAppsCase.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CB5FD1112D77A8F500121BEA /* SevenAppsCaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB5FD1182D77A8F500121BEA /* Build configuration list for PBXNativeTarget "SevenAppsCaseTests" */;
+			buildPhases = (
+				CB5FD10E2D77A8F500121BEA /* Sources */,
+				CB5FD10F2D77A8F500121BEA /* Frameworks */,
+				CB5FD1102D77A8F500121BEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB5FD1172D77A8F500121BEA /* PBXTargetDependency */,
+			);
+			name = SevenAppsCaseTests;
+			productName = SevenAppsCaseTests;
+			productReference = CB5FD1122D77A8F500121BEA /* SevenAppsCaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -263,6 +347,10 @@
 				TargetAttributes = {
 					CB5F4B222D76E77700C2ADD8 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					CB5FD1112D77A8F500121BEA = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = CB5F4B222D76E77700C2ADD8;
 					};
 				};
 			};
@@ -280,6 +368,7 @@
 			projectRoot = "";
 			targets = (
 				CB5F4B222D76E77700C2ADD8 /* SevenAppsCase */,
+				CB5FD1112D77A8F500121BEA /* SevenAppsCaseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +380,13 @@
 			files = (
 				CB5F4B332D76E77A00C2ADD8 /* LaunchScreen.storyboard in Resources */,
 				CB5F4B302D76E77A00C2ADD8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5FD1102D77A8F500121BEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +404,10 @@
 				CB5FD0D92D76FDD800121BEA /* UserRouter.swift in Sources */,
 				CB5FD0E52D7702CC00121BEA /* UserListBuilder.swift in Sources */,
 				CB5FD1022D774CF800121BEA /* AppCoordinator.swift in Sources */,
+				CB5FD1072D779C4500121BEA /* UserDetailBuilder.swift in Sources */,
 				CB5FD0EE2D7711BD00121BEA /* ReuseIdentifier.swift in Sources */,
+				CB5FD1092D779C4B00121BEA /* UserDetailViewModel.swift in Sources */,
+				CB5FD10B2D779C5600121BEA /* UserDetailController.swift in Sources */,
 				CB5FD0EC2D770EAE00121BEA /* UITableView+Extensions.swift in Sources */,
 				CB5FD0DD2D76FEB600121BEA /* UserAPI.swift in Sources */,
 				CB5FD0F52D77195300121BEA /* UIDimension.swift in Sources */,
@@ -320,10 +419,27 @@
 				CB5F4B272D76E77700C2ADD8 /* AppDelegate.swift in Sources */,
 				CB5FD0FD2D774C5000121BEA /* CoordinatorFactory.swift in Sources */,
 				CB5FD1042D77517200121BEA /* UserListCoordinator.swift in Sources */,
+				CB5FD10D2D77A66400121BEA /* UserDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5FD10E2D77A8F500121BEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB5FD11D2D77A9F300121BEA /* UserDetailControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB5FD1172D77A8F500121BEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB5F4B222D76E77700C2ADD8 /* SevenAppsCase */;
+			targetProxy = CB5FD1162D77A8F500121BEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB5F4B312D76E77A00C2ADD8 /* LaunchScreen.storyboard */ = {
@@ -505,6 +621,42 @@
 			};
 			name = Release;
 		};
+		CB5FD1192D77A8F500121BEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H396924QD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SevenAppsCaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SevenAppsCase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SevenAppsCase";
+			};
+			name = Debug;
+		};
+		CB5FD11A2D77A8F500121BEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H396924QD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SevenAppsCaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SevenAppsCase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SevenAppsCase";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,6 +674,15 @@
 			buildConfigurations = (
 				CB5F4B382D76E77A00C2ADD8 /* Debug */,
 				CB5F4B392D76E77A00C2ADD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB5FD1182D77A8F500121BEA /* Build configuration list for PBXNativeTarget "SevenAppsCaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB5FD1192D77A8F500121BEA /* Debug */,
+				CB5FD11A2D77A8F500121BEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

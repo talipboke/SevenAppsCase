@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  UserListCoordinator.swift
 //  SevenAppsCase
 //
 //  Created by Talip on 4.03.2025.
@@ -11,10 +11,10 @@ final class UserListCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController
     var childCoordinators: [CoordinatorProtocol] = []
     
-    typealias Factory = UserListBuilder
-    private let factory: Factory
+    typealias Factory = UserListBuilder & UserDetailBuilder
     
     weak var viewModel: UserListViewModelProtocol?
+    private let factory: Factory
     
     init(navigationController: UINavigationController,
          factory: Factory) {
@@ -25,5 +25,10 @@ final class UserListCoordinator: CoordinatorProtocol {
     func start() {
         let controller = factory.build(coordinator: self)
         navigationController.viewControllers = [controller]
+    }
+    
+    func navigateToUserDetail(with user: UserModel) {
+        let controller = factory.build(user: user)
+        navigationController.pushViewController(controller, animated: true)
     }
 }

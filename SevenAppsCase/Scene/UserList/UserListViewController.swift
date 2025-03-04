@@ -52,6 +52,7 @@ private extension UserListViewController {
         let view = UITableView()
         view.register(cellWithClass: UserCell.self)
         view.dataSource = self
+        view.delegate = self
         return view
     }
 }
@@ -66,6 +67,7 @@ private extension UserListViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension UserListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.userList.value.count
@@ -75,5 +77,12 @@ extension UserListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: indexPath, cell: UserCell.self)
         cell.configure(with: viewModel.userList.value[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension UserListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.onTapCell(by: indexPath.row)
     }
 }
