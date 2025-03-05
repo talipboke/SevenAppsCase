@@ -1,5 +1,5 @@
 //
-//  UserListViewController.swift
+//  UserListController.swift
 //  SevenAppsCase
 //
 //  Created by Talip on 4.03.2025.
@@ -8,8 +8,8 @@
 import UIKit
 import Combine
 
-final class UserListViewController: UIViewController {
-    private lazy var tableView = makeTableView()
+final class UserListController: UIViewController {
+    private(set) lazy var userListView = UserListView()
     
     private var cancellables: Set<AnyCancellable> = []
     private var viewModel: UserListViewModelProtocol
@@ -23,7 +23,8 @@ final class UserListViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        setupUI()
+        view = userListView
+        setupTableView()
     }
     
     override func viewDidLoad() {
@@ -34,41 +35,25 @@ final class UserListViewController: UIViewController {
 }
 
 // MARK: - UI
-private extension UserListViewController {
-    func setupUI() {
-        view.backgroundColor = .white
-        
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        ])
-    }
-    
-    func makeTableView() -> UITableView {
-        let view = UITableView()
-        view.register(cellWithClass: UserCell.self)
-        view.dataSource = self
-        view.delegate = self
-        return view
+private extension UserListController {
+    func setupTableView() {
+        userListView.set(delegate: self)
+        userListView.set(dataSource: self)
     }
 }
 
-private extension UserListViewController {
+private extension UserListController {
     func observe() {
         viewModel.userList.$value
             .receive(on: DispatchQueue.main).receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.tableView.reloadData()
+                self?.userListView.tableView.reloadData()
             }.store(in: &cancellables)
     }
 }
 
 // MARK: - UITableViewDataSource
-extension UserListViewController: UITableViewDataSource {
+extension UserListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.userList.value.count
     }
@@ -81,7 +66,7 @@ extension UserListViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension UserListViewController: UITableViewDelegate {
+extension UserListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.onTapCell(by: indexPath.row)
     }
