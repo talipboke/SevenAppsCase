@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var dependencies = AppDependencies()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        startApp()
+        if !dependencies.appConfig.isRunningTests {
+            startApp()
+        }
         return true
     }
 }

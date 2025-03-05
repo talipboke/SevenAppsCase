@@ -34,6 +34,7 @@
 		CB5FD10D2D77A66400121BEA /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD10C2D77A66300121BEA /* UserDetailView.swift */; };
 		CB5FD11D2D77A9F300121BEA /* UserDetailControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FD11C2D77A9F300121BEA /* UserDetailControllerTests.swift */; };
 		CB82E8F22D784B4400A9CACE /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82E8F12D784B4400A9CACE /* UserListView.swift */; };
+		CB82E8F52D784FF100A9CACE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82E8F42D784FF100A9CACE /* UserRepository.swift */; };
 		CBBA35F42D76F1C10095672A /* EasyNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = CBBA35F32D76F1C10095672A /* EasyNetwork */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		CB5FD1122D77A8F500121BEA /* SevenAppsCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SevenAppsCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5FD11C2D77A9F300121BEA /* UserDetailControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailControllerTests.swift; sourceTree = "<group>"; };
 		CB82E8F12D784B4400A9CACE /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		CB82E8F42D784FF100A9CACE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +127,12 @@
 			children = (
 				CB5F4B3B2D76EC0000C2ADD8 /* App */,
 				CB5FD0FE2D774CC300121BEA /* Coordinator */,
-				CB5FD0E72D770B1C00121BEA /* Utils */,
 				CB5FD0D72D76FDC400121BEA /* Network */,
+				CB82E8F32D784FDF00A9CACE /* Repository */,
 				CB5FD0DE2D76FEE300121BEA /* Model */,
 				CB5FD0F32D77159900121BEA /* Scene */,
 				CB5FD0EA2D770E8800121BEA /* Extensions */,
+				CB5FD0E72D770B1C00121BEA /* Utils */,
 				CB5F4B3C2D76EC0600C2ADD8 /* Resource */,
 			);
 			path = SevenAppsCase;
@@ -290,6 +293,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		CB82E8F32D784FDF00A9CACE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				CB82E8F42D784FF100A9CACE /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		CBBA35F22D76F1C10095672A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +414,7 @@
 				CB5F4B2B2D76E77700C2ADD8 /* UserListController.swift in Sources */,
 				CB5FD0DB2D76FE3B00121BEA /* AppConfig.swift in Sources */,
 				CB5FD0F82D774B9400121BEA /* AppDependencies.swift in Sources */,
+				CB82E8F52D784FF100A9CACE /* UserRepository.swift in Sources */,
 				CB5FD0E32D77011A00121BEA /* UserListViewModel.swift in Sources */,
 				CB5FD0D92D76FDD800121BEA /* UserRouter.swift in Sources */,
 				CB5FD0E52D7702CC00121BEA /* UserListBuilder.swift in Sources */,

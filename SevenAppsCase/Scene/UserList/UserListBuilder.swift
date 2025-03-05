@@ -13,7 +13,7 @@ protocol UserListBuilder {
 
 extension AppDependencies: UserListBuilder {
     func build(coordinator: UserListCoordinator) -> UserListController {
-        let viewModel = UserListViewModel(userApi: makeUserAPI(), coordinator: coordinator)
+        let viewModel = UserListViewModel(repository: userRepository, coordinator: coordinator)
         return UserListController(viewModel: viewModel)
     }
 }
