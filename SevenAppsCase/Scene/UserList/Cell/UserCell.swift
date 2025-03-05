@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct UserCellModel: Equatable {
+    let name: String
+    let email: String
+}
+
 final class UserCell: UITableViewCell {
     private lazy var nameLabel = makeNameLabel()
     private lazy var emailLabel = makeEmailLabel()
@@ -18,7 +23,7 @@ final class UserCell: UITableViewCell {
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    func configure(with model: UserModel) {
+    func configure(with model: UserCellModel) {
         nameLabel.text = model.name
         emailLabel.text = model.email
     }

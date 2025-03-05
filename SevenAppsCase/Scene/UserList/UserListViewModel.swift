@@ -6,24 +6,27 @@
 //
 
 import Foundation
+import Combine
 
 protocol UserListViewModelProtocol: AnyObject {
-    var userList: ConsecutiveNonRepeatingState<[UserModel]> { get }
+    var userList: ConsecutiveNonRepeatingState<[UserCellModel]> { get }
     func onViewDidLoad()
     func onTapCell(by index: Int)
 }
 
 final class UserListViewModel: UserListViewModelProtocol {
-    var userList = ConsecutiveNonRepeatingState<[UserModel]>(initialValue: [])
+    private var cancellables: Set<AnyCancellable> = []
+    var userList = ConsecutiveNonRepeatingState<[UserCellModel]>(initialValue: [])
     
-    private let userApi: UserAPIProtocol
+    private let repository: UserRepositoryProtocol
     private let coordinator: UserListCoordinator
     
-    init(userApi: UserAPIProtocol,
+    init(repository: UserRepositoryProtocol,
          coordinator: UserListCoordinator) {
-        self.userApi = userApi
+        self.repository = repository
         self.coordinator = coordinator
         coordinator.viewModel = self
+        observe()
     }
     
     func onViewDidLoad() {
@@ -33,15 +36,27 @@ final class UserListViewModel: UserListViewModelProtocol {
     }
     
     func onTapCell(by index: Int) {
-        coordinator.navigateToUserDetail(with: userList.value[index])
+        coordinator.navigateToUserDetail(with: repository.userList.value[index])
     }
 }
 
 private extension UserListViewModel {
+    func observe() {
+        repository.userList.$value
+            .receive(on: DispatchQueue.global())
+            .map { list in
+                list.map { user in
+                    UserCellModel(name: user.name, email: user.email)
+                }
+            }
+            .sink { [weak self] list in
+                self?.userList.update(list)
+            }.store(in: &cancellables)
+    }
+    
     func getUserList() async {
         do {
-            let list = try await userApi.getUserList()
-            userList.update(list)
+            try await repository.getUserList()
         } catch {
             // TODO: Will be handled
             print(error)
